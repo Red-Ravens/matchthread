@@ -12,7 +12,7 @@ if __name__ == '__main__':
     if 'pi' in os.getcwd():
         os.chdir('/media/pi/USB20FD/matchthread/')
     else:
-        os.chdir('/Users/Alex/Documents/Python3/matchthread/')
+        os.chdir('/Users/A/Documents/Python3/matchthread/')
 
     if len(sys.argv) > 2:
         toopen = 'WNT'

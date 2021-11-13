@@ -1,0 +1,25 @@
+###################################
+#    LAST UPDATED: 11 NOV 2021   #
+###################################
+import sys
+import os
+import praw_oauth2
+
+if __name__ == '__main__':
+
+    if 'pi' in os.getcwd():
+        os.chdir('/media/pi/USB20FD/matchthread/')
+    else:
+        os.chdir('/Users/RedRavens/Documents/Python3/matchthread/')
+
+    if len(sys.argv) > 1:
+        toopen = 'wnt'
+    else:
+        toopen = 'mnt'
+
+    subject = 'Post Match Thread: {}'.format(toopen.upper())
+
+    user_agent = "Post Match Thread v4.0 modified by /u/RedRavens, using OAuth"
+
+    r = praw_oauth2.ussoccer_bot(user_agent)
+    r.subreddit('ussoccer').submit(subject, selftext='Discuss below')
